@@ -6,7 +6,7 @@
     <artifactId>joda-time-jpox</artifactId>
     <packaging>jar</packaging>
     <name>joda-time-jpox</name>
-    <version>0.7.0-SNAPSHOT</version>
+    <version>0.7.0</version>
     <description>JPOX class mappings for Joda Time classes.</description>
     <url>http://code.google.com/p/joda-time-jpox/</url>
 
