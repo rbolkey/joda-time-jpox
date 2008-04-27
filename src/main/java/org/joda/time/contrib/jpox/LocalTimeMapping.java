@@ -26,7 +26,7 @@ import org.jpox.store.mapped.mapping.ObjectAsIntegerMapping;
  * @see org.joda.time.LocalTime#getMillisOfDay()
  * @see org.joda.time.LocalTime#fromMillisOfDay(long)
  */
-public class LocalTimeExactMapping extends ObjectAsIntegerMapping
+public class LocalTimeMapping extends ObjectAsIntegerMapping
 {
 
     public Class getJavaType()
