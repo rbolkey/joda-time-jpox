@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <extension point="org.jpox.store_mapping">
+        <mapping java-type="org.joda.time.DateTime" mapping-class="org.joda.time.contrib.jpox.DateTimeMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.DateTimeZone" mapping-class="org.joda.time.contrib.jpox.DateTimeZoneMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.Duration" mapping-class="org.joda.time.contrib.jpox.DurationMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.Interval" mapping-class="org.joda.time.contrib.jpox.IntervalMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.LocalDate" mapping-class="org.joda.time.contrib.jpox.LocalDateMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.LocalTime" mapping-class="org.joda.time.contrib.jpox.LocalTimeMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.Period" mapping-class="org.joda.time.contrib.jpox.PeriodMapping"
+                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+    </extension>
+</plugin>
