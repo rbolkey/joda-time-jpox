@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
+import org.datanucleus.ClassLoaderResolver;
+import org.datanucleus.store.mapped.mapping.ObjectAsIntegerMapping;
 import org.joda.time.LocalTime;
-import org.jpox.ClassLoaderResolver;
-import org.jpox.store.mapped.mapping.ObjectAsIntegerMapping;
 
 /**
  * Maps a {@link org.joda.time.LocalTime} to a INTEGER field representing the number of milliseconds in the day.

@@ -14,59 +14,51 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
-import org.joda.time.LocalDate;
-import org.jpox.ClassLoaderResolver;
-import org.jpox.store.mapped.expression.QueryExpression;
-import org.jpox.store.mapped.expression.ScalarExpression;
+import org.datanucleus.ClassLoaderResolver;
+import org.joda.time.DateTime;
 
 import java.sql.Timestamp;
 
 /**
- * Maps a {@link org.joda.time.LocalDate} to a TIMESTAMP column.
+ * Maps a {@link org.joda.time.DateTime} to a TIMESTAMP column.
  *
  * @author Richard Bolkey
- * @see org.joda.time.LocalDate#toDateTimeAtStartOfDay()
+ * @see org.joda.time.DateTime#getMillis()
  */
-public class LocalDateMapping extends ObjectAsTimestampMapping
+public class DateTimeMapping extends ObjectAsTimestampMapping
 {
-
-    private static final LocalDate sampleMappedValue = new LocalDate();
+    private static final DateTime mappingSampleValue = new DateTime();
 
     public Object getSampleValue( ClassLoaderResolver clr )
     {
-        return sampleMappedValue;
+        return mappingSampleValue;
     }
 
     /**
-     * Method to return the default length of this type in the datastore. {@link org.joda.time.LocalDate} requires 10
-     * characters ("yyyy-MM-dd")
+     * Method to return the default length of this type in the datastore. {@link DateTime} requires 24 characters
+     * ("yyyy-MM-ddTHH:mm:ss.SSSZ")
      *
      * @param index The index position
      * @return The default length
      */
     public int getDefaultLength( int index )
     {
-        return 10;
+        return 24;
     }
 
     public Class getJavaType()
     {
-        return LocalDate.class;
-    }
-
-    public ScalarExpression newLiteral( QueryExpression qs, Object value )
-    {
-        return super.newLiteral(qs, new Timestamp(((LocalDate) value).toDateTimeAtStartOfDay().getMillis()));
+        return DateTime.class;
     }
 
     protected Timestamp objectToTimestamp( Object object )
     {
         Timestamp time;
-        if (object instanceof LocalDate)
+        if (object instanceof DateTime)
         {
-            time = new Timestamp(((LocalDate) object).toDateTimeAtStartOfDay().getMillis());
+            time = new Timestamp(((DateTime) object).getMillis());
         }
         else
         {
@@ -78,7 +70,6 @@ public class LocalDateMapping extends ObjectAsTimestampMapping
 
     protected Object timestampToObject( Timestamp datastoreValue )
     {
-        return new LocalDate(datastoreValue.getTime());
+        return new DateTime(datastoreValue.getTime());
     }
-
 }

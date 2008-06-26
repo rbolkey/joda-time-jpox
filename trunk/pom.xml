@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.joda-time-jpox</groupId>
-    <artifactId>joda-time-jpox</artifactId>
+    <artifactId>joda-time-datanucleus</artifactId>
     <packaging>jar</packaging>
-    <name>joda-time-jpox</name>
+    <name>joda-time-datanucleus</name>
     <version>0.8.0-SNAPSHOT</version>
-    <description>JPOX class mappings for Joda Time classes.</description>
+    <description>Datanucleus class mappings for Joda Time classes.</description>
     <url>http://code.google.com/p/joda-time-jpox/</url>
 
     <inceptionYear>2008</inceptionYear>
@@ -27,9 +27,9 @@
             <version>1.5</version>
         </dependency>
         <dependency>
-            <groupId>jpox</groupId>
-            <artifactId>jpox-core</artifactId>
-            <version>${jpox-release-version}</version>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>${datanucleus-release-version}</version>
         </dependency>
         <dependency>
             <groupId>javax.jdo</groupId>
@@ -45,9 +45,20 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>jpox</groupId>
-            <artifactId>jpox-rdbms</artifactId>
-            <version>${jpox-release-version}</version>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-rdbms</artifactId>
+            <version>${datanucleus-release-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-enhancer</artifactId>
+            <version>${datanucleus-release-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>3.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -94,9 +105,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>jpox</groupId>
-                <artifactId>maven-jpox-plugin</artifactId>
-                <version>${jpox-release-version}</version>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>maven-datanucleus-plugin</artifactId>
+                <version>${datanucleus-release-version}</version>
                 <executions>
                     <execution>
                         <phase>test-compile</phase>
@@ -107,12 +118,12 @@
                             <classes>${project.build.testOutputDirectory}</classes>
                             <classpathElements>${project.testClasspathElements}</classpathElements>
                             <outDir>${project.build.testOutputDirectory}</outDir>
-                            <props>${project.build.testOutputDirectory}/jpox.properties</props>
+                            <props>${project.build.testOutputDirectory}/datanucleus.properties</props>
                         </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <log4jConfiguration>${basedir}/log4j.properties</log4jConfiguration>                    
+                    <log4jConfiguration>${project.build.testOutputDirectory}/log4j.properties</log4jConfiguration>
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
@@ -142,6 +153,17 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>datanucleus-maven</id>
+            <url>http://www.datanucleus.org/downloads/maven/</url>
+        </repository>
+        <repository>
+            <id>datanucleus-maven2</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </repository>
+    </repositories>
+
     <reporting>
         <plugins>
             <plugin>
@@ -158,7 +180,7 @@
     </reporting>
 
     <properties>
-        <jpox-release-version>1.2.2</jpox-release-version>
+        <datanucleus-release-version>1.0.0.m1</datanucleus-release-version>
     </properties>
 
 </project>

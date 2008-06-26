@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
+import org.datanucleus.ClassLoaderResolver;
+import org.datanucleus.store.mapped.mapping.ObjectAsStringMapping;
 import org.joda.time.DateTimeZone;
-import org.jpox.ClassLoaderResolver;
-import org.jpox.store.mapped.mapping.ObjectAsStringMapping;
 
 /**
  * Maps a {@link org.joda.time.DateTimeZone} to a VARCHAR column.

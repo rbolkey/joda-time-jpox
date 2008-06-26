@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -40,7 +40,7 @@ public class PersistenceTest
 
     public PersistenceTest()
     {
-        _pmf = JDOHelper.getPersistenceManagerFactory("jpox.properties");
+        _pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
     }
 
     @Test
