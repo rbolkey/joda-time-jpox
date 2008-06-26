@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
+import org.datanucleus.ClassLoaderResolver;
+import org.datanucleus.ClassNameConstants;
+import org.datanucleus.ObjectManager;
+import org.datanucleus.metadata.AbstractMemberMetaData;
+import org.datanucleus.store.mapped.DatastoreAdapter;
+import org.datanucleus.store.mapped.DatastoreContainerObject;
+import org.datanucleus.store.mapped.expression.LogicSetExpression;
+import org.datanucleus.store.mapped.expression.QueryExpression;
+import org.datanucleus.store.mapped.expression.ScalarExpression;
+import org.datanucleus.store.mapped.mapping.SingleFieldMultiMapping;
 import org.joda.time.Interval;
-import org.jpox.ClassLoaderResolver;
-import org.jpox.ClassNameConstants;
-import org.jpox.ObjectManager;
-import org.jpox.metadata.AbstractMemberMetaData;
-import org.jpox.store.mapped.DatastoreAdapter;
-import org.jpox.store.mapped.DatastoreContainerObject;
-import org.jpox.store.mapped.expression.LogicSetExpression;
-import org.jpox.store.mapped.expression.QueryExpression;
-import org.jpox.store.mapped.expression.ScalarExpression;
-import org.jpox.store.mapped.mapping.SingleFieldMultiMapping;
 
 import java.sql.Timestamp;
 

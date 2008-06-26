@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.joda.time.contrib.jpox;
+package org.joda.time.contrib.datanucleus;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
