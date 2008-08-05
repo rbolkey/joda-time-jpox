@@ -180,7 +180,7 @@
     </reporting>
 
     <properties>
-        <datanucleus-release-version>1.0.0.m1</datanucleus-release-version>
+        <datanucleus-release-version>1.0.0.m4</datanucleus-release-version>
     </properties>
 
 </project>
