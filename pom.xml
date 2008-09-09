@@ -6,7 +6,7 @@
     <artifactId>joda-time-datanucleus</artifactId>
     <packaging>jar</packaging>
     <name>joda-time-datanucleus</name>
-    <version>0.8.1-SNAPSHOT</version>
+    <version>0.8.1</version>
     <description>Datanucleus class mappings for Joda Time classes.</description>
     <url>http://code.google.com/p/joda-time-jpox/</url>
 
