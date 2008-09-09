@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+    <extension point="org.datanucleus.java_type">
+        <java-type name="org.joda.time.DateTime" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.DateTimeZone" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.Duration" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.Interval" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.LocalDate" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.LocalTime" persistent="true" dfg="true" embedded="true"/>
+        <java-type name="org.joda.time.Periods" persistent="true" dfg="true" embedded="true"/>
+    </extension>
     <extension point="org.datanucleus.store_mapping">
-        <mapping java-type="org.joda.time.DateTime" mapping-class="org.joda.time.contrib.datanucleus.DateTimeMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.DateTimeZone" mapping-class="org.joda.time.contrib.datanucleus.DateTimeZoneMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.Duration" mapping-class="org.joda.time.contrib.datanucleus.DurationMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.Interval" mapping-class="org.joda.time.contrib.datanucleus.IntervalMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.LocalDate" mapping-class="org.joda.time.contrib.datanucleus.LocalDateMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.LocalTime" mapping-class="org.joda.time.contrib.datanucleus.LocalTimeMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
-        <mapping java-type="org.joda.time.Period" mapping-class="org.joda.time.contrib.datanucleus.PeriodMapping"
-                 default-persistent="true" default-fetch-group="true" default-embedded="true"/>
+        <mapping java-type="org.joda.time.DateTime" mapping-class="org.joda.time.contrib.datanucleus.DateTimeMapping"/>
+        <mapping java-type="org.joda.time.DateTimeZone"
+                 mapping-class="org.joda.time.contrib.datanucleus.DateTimeZoneMapping"/>
+        <mapping java-type="org.joda.time.Duration" mapping-class="org.joda.time.contrib.datanucleus.DurationMapping"/>
+        <mapping java-type="org.joda.time.Interval" mapping-class="org.joda.time.contrib.datanucleus.IntervalMapping"/>
+        <mapping java-type="org.joda.time.LocalDate"
+                 mapping-class="org.joda.time.contrib.datanucleus.LocalDateMapping"/>
+        <mapping java-type="org.joda.time.LocalTime"
+                 mapping-class="org.joda.time.contrib.datanucleus.LocalTimeMapping"/>
+        <mapping java-type="org.joda.time.Period" mapping-class="org.joda.time.contrib.datanucleus.PeriodMapping"/>
     </extension>
 </plugin>
