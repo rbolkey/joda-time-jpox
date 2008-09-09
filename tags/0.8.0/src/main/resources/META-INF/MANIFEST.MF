@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: joda-time-datanucleus
+Bundle-SymbolicName: org.joda.time.contrib.datanucleus;singleton:=true
+Bundle-Vendor: rbolkey
+Bundle-Version: 1.0.0
