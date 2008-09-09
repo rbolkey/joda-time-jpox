@@ -79,23 +79,42 @@ public class PersistenceTest
         }
 
         // Do the retrieval
+        JodaTimeEntity entity = null;
         pm = _pmf.getPersistenceManager();
         tx = pm.currentTransaction();
         try
         {
             tx.begin();
 
-            JodaTimeEntity entity = pm.getObjectById(JodaTimeEntity.class, 1L);
+            entity = pm.detachCopy(pm.getObjectById(JodaTimeEntity.class, 1L));
 
-            assertEquals(entity.getDateTime(), dateTime);
-            assertEquals(entity.getDateTimeZone(), dateTimeZone);
-            assertEquals(entity.getDuration(), duration);
-            assertEquals(entity.getInterval(), interval);
-            assertEquals(entity.getLocalDate(), localDate);
-            assertEquals(entity.getLocalTime(), localTime);
-            assertEquals(entity.getPeriod(), period);
+            tx.commit();
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
 
-            pm.deletePersistent(entity);
+        assertEquals(entity.getDateTime(), dateTime);
+        assertEquals(entity.getDateTimeZone(), dateTimeZone);
+        assertEquals(entity.getDuration(), duration);
+        assertEquals(entity.getInterval(), interval);
+        assertEquals(entity.getLocalDate(), localDate);
+        assertEquals(entity.getLocalTime(), localTime);
+        assertEquals(entity.getPeriod(), period);
+
+        // cleanup
+        pm = _pmf.getPersistenceManager();
+        tx = pm.currentTransaction();
+        try
+        {
+            tx.begin();
+
+            pm.deletePersistent(pm.makePersistent(entity));
 
             tx.commit();
         }
