@@ -12,6 +12,19 @@
 
     <inceptionYear>2008</inceptionYear>
 
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>joda-time-jpox-repository</id>
+            <url>svn:https://joda-time-jpox.googlecode.com/svn/repository</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>joda-time-jpox-snapshots</id>
+            <url>svn:https://joda-time-jpox.googlecode.com/svn/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -20,9 +33,20 @@
         </license>
     </licenses>
 
+    <scm>
+        <connection>scm:svn:http://joda-time-jpox.googlecode.com/svn/trunk</connection>
+        <developerConnection>scm:svn:https://joda-time-jpox.googlecode.com/svn/trunk</developerConnection>
+        <url>http://joda-time-jpox.googlecode.com/svn/trunk</url>
+    </scm>
+
+    <issueManagement>
+        <system>Google Code Issue Tracking</system>
+        <url>http://code.google.com/p/joda-time-jpox/issues/list</url>
+    </issueManagement>
+
     <properties>
         <datanucleus-release-version>1.0.0</datanucleus-release-version>
-    </properties>    
+    </properties>
 
     <dependencies>
         <dependency>
@@ -81,6 +105,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <executions>
@@ -108,6 +133,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>maven-datanucleus-plugin</artifactId>
@@ -131,6 +157,7 @@
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>com.google.code.maven-license-plugin</groupId>
                 <artifactId>maven-license-plugin</artifactId>
@@ -154,7 +181,29 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.jvnet.wagon-svn</groupId>
+                <artifactId>wagon-svn</artifactId>
+                <version>1.8</version>
+            </extension>
+        </extensions>
+
     </build>
 
     <repositories>
@@ -185,5 +234,11 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <developers>
+        <developer>
+            <name>Richard Bolkey</name>
+        </developer>
+    </developers>
 
 </project>
