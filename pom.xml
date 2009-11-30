@@ -45,7 +45,7 @@
     </issueManagement>
 
     <properties>
-        <datanucleus-release-version>1.0.0</datanucleus-release-version>
+        <datanucleus-release-version>[1.1.0,1.1.6]</datanucleus-release-version>
     </properties>
 
     <dependencies>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>javax.jdo</groupId>
             <artifactId>jdo2-api</artifactId>
-            <version>2.2-SNAPSHOT</version>
+            <version>2.3-eb</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -137,7 +137,8 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>maven-datanucleus-plugin</artifactId>
-                <version>${datanucleus-release-version}</version>
+                <version>1.1.4</version>
+                <!--<version>${datanucleus-release-version}</version>-->
                 <executions>
                     <execution>
                         <phase>test-compile</phase>
