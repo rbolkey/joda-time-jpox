@@ -5,7 +5,7 @@
     <artifactId>joda-time-datanucleus</artifactId>
     <packaging>jar</packaging>
     <name>joda-time-datanucleus</name>
-    <version>0.8.2</version>
+    <version>0.8.3-SNAPSHOT</version>
     <description>Datanucleus class mappings for Joda Time classes.</description>
     <url>http://code.google.com/p/joda-time-jpox/</url>
 
@@ -33,9 +33,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:svn:http://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</connection>
-        <developerConnection>scm:svn:https://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</developerConnection>
-        <url>http://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</url>
+        <connection>scm:svn:http://joda-time-jpox.googlecode.com/svn/trunk</connection>
+        <developerConnection>scm:svn:https://joda-time-jpox.googlecode.com/svn/trunk</developerConnection>
+        <url>http://joda-time-jpox.googlecode.com/svn/trunk</url>
     </scm>
 
     <issueManagement>
