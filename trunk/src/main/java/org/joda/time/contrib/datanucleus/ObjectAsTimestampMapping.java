@@ -23,7 +23,6 @@ import org.datanucleus.store.mapped.expression.QueryExpression;
 import org.datanucleus.store.mapped.expression.ScalarExpression;
 import org.datanucleus.store.mapped.expression.SqlTemporalExpression;
 import org.datanucleus.store.mapped.expression.SqlTimestampLiteral;
-import org.datanucleus.store.mapped.mapping.SimpleDatastoreRepresentation;
 import org.datanucleus.store.mapped.mapping.SingleFieldMapping;
 
 import java.sql.Timestamp;
@@ -31,7 +30,7 @@ import java.sql.Timestamp;
 /**
  * Abstract SCO mapping for a java type that will be stored as a Timestamp type.
  */
-public abstract class ObjectAsTimestampMapping extends SingleFieldMapping implements SimpleDatastoreRepresentation
+public abstract class ObjectAsTimestampMapping extends SingleFieldMapping
 {
     public ScalarExpression newLiteral( QueryExpression qs, Object value )
     {
