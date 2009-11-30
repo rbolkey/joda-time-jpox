@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.joda-time-jpox</groupId>
     <artifactId>joda-time-datanucleus</artifactId>
     <packaging>jar</packaging>
     <name>joda-time-datanucleus</name>
-    <version>0.8.2-SNAPSHOT</version>
+    <version>0.8.2</version>
     <description>Datanucleus class mappings for Joda Time classes.</description>
     <url>http://code.google.com/p/joda-time-jpox/</url>
 
@@ -34,9 +33,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:svn:http://joda-time-jpox.googlecode.com/svn/trunk</connection>
-        <developerConnection>scm:svn:https://joda-time-jpox.googlecode.com/svn/trunk</developerConnection>
-        <url>http://joda-time-jpox.googlecode.com/svn/trunk</url>
+        <connection>scm:svn:http://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</connection>
+        <developerConnection>scm:svn:https://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</developerConnection>
+        <url>http://joda-time-jpox.googlecode.com/svn/tags/joda-time-datanucleus-0.8.2</url>
     </scm>
 
     <issueManagement>
